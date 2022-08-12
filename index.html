@@ -152,6 +152,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-blogConfig" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/12/blogConfig/">blog配置</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/12/blogConfig/" class="archive-article-date">
+  	<time datetime="2022-08-12T07:36:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h1><ul>
+<li>官网安装node.js</li>
+<li>cmd</li>
+<li>npm install -g -cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a>  （淘宝镜像）</li>
+<li>cnpm install -g hexo-cli    （安装hexo框架）</li>
+<li>创建空文件夹 myblog （D盘下）</li>
+<li>在myblog路径下  <strong>git bash here</strong> 下  hexo init</li>
+<li>hexo s   启动blog</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br><span class="line">hexo n</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="部署到github上"><a href="#部署到github上" class="headerlink" title="部署到github上"></a>部署到github上</h1><ul>
+<li>注册github账号</li>
+<li>new repository（注意 repository name 的格式）</li>
+</ul>
+<p><img src="/2022/08/12/blogConfig/a.png" alt="a"></p>
+<ul>
+<li>cnpm install –save hexo-deployer-git</li>
+<li>配置_config.yml</li>
+</ul>
+<p><img src="/2022/08/12/blogConfig/b.png" alt="b"></p>
+<ul>
+<li>设置git的name和email</li>
+<li>hexo d</li>
+<li>部署完成后通过<strong>chenhaowei1314.github.io</strong>访问</li>
+</ul>
+<h1 id="解决hexo无法显示图片的问题"><a href="#解决hexo无法显示图片的问题" class="headerlink" title="解决hexo无法显示图片的问题"></a>解决hexo无法显示图片的问题</h1><p>- </p>
+<p><img src="/2022/08/12/blogConfig/c.png" alt="c"></p>
+<ul>
+<li><p>npm install <a target="_blank" rel="noopener" href="https://github.com/CodeFalling/hexo-asset-image">https://github.com/CodeFalling/hexo-asset-image</a></p>
+</li>
+<li><p>将图片放到同名的文件夹中 （注意图片的路径格式    &#x2F;分隔   ）</p>
+</li>
+</ul>
+<p><img src="/2022/08/12/blogConfig/d.png" alt="d"></p>
+<p><img src="/2022/08/12/blogConfig/e.png" alt="e"></p>
+<p><img src="/2022/08/12/blogConfig/f.png" alt="f"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/12/blogConfig/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,8 +275,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="a.png" alt="a"></p>
-
+        
       
 
       

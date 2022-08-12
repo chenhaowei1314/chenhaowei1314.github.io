@@ -6,17 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Spring | Hexo</title>
+  <title>blog配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Spring">
-<meta property="og:url" content="http://example.com/2022/08/12/Spring/index.html">
+  <meta name="description" content="本地安装 官网安装node.js cmd npm install -g -cnpm –registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org  （淘宝镜像） cnpm install -g hexo-cli    （安装hexo框架） 创建空文件夹 myblog （D盘下） 在myblog路径下  git bash here 下  hexo init hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blog配置">
+<meta property="og:url" content="http://example.com/2022/08/12/blogConfig/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本地安装 官网安装node.js cmd npm install -g -cnpm –registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org  （淘宝镜像） cnpm install -g hexo-cli    （安装hexo框架） 创建空文件夹 myblog （D盘下） 在myblog路径下  git bash here 下  hexo init hexo">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-08-12T07:00:29.000Z">
-<meta property="article:modified_time" content="2022-08-12T07:54:17.637Z">
+<meta property="og:image" content="http://example.com/2022/08/12/blogConfig/a.png">
+<meta property="og:image" content="http://example.com/2022/08/12/blogConfig/b.png">
+<meta property="og:image" content="http://example.com/2022/08/12/blogConfig/c.png">
+<meta property="og:image" content="http://example.com/2022/08/12/blogConfig/d.png">
+<meta property="og:image" content="http://example.com/2022/08/12/blogConfig/e.png">
+<meta property="og:image" content="http://example.com/2022/08/12/blogConfig/f.png">
+<meta property="article:published_time" content="2022-08-12T07:36:42.000Z">
+<meta property="article:modified_time" content="2022-08-12T07:54:45.795Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/08/12/blogConfig/a.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,27 +161,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Spring" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-blogConfig" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spring
+      blog配置
     </h1>
   
 
         
-        <a href="/2022/08/12/Spring/" class="archive-article-date">
-  	<time datetime="2022-08-12T07:00:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-12</time>
+        <a href="/2022/08/12/blogConfig/" class="archive-article-date">
+  	<time datetime="2022-08-12T07:36:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h1><ul>
+<li>官网安装node.js</li>
+<li>cmd</li>
+<li>npm install -g -cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a>  （淘宝镜像）</li>
+<li>cnpm install -g hexo-cli    （安装hexo框架）</li>
+<li>创建空文件夹 myblog （D盘下）</li>
+<li>在myblog路径下  <strong>git bash here</strong> 下  hexo init</li>
+<li>hexo s   启动blog</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br><span class="line">hexo n</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="部署到github上"><a href="#部署到github上" class="headerlink" title="部署到github上"></a>部署到github上</h1><ul>
+<li>注册github账号</li>
+<li>new repository（注意 repository name 的格式）</li>
+</ul>
+<p><img src="/2022/08/12/blogConfig/a.png" alt="a"></p>
+<ul>
+<li>cnpm install –save hexo-deployer-git</li>
+<li>配置_config.yml</li>
+</ul>
+<p><img src="/2022/08/12/blogConfig/b.png" alt="b"></p>
+<ul>
+<li>设置git的name和email</li>
+<li>hexo d</li>
+<li>部署完成后通过<strong>chenhaowei1314.github.io</strong>访问</li>
+</ul>
+<h1 id="解决hexo无法显示图片的问题"><a href="#解决hexo无法显示图片的问题" class="headerlink" title="解决hexo无法显示图片的问题"></a>解决hexo无法显示图片的问题</h1><p>- </p>
+<p><img src="/2022/08/12/blogConfig/c.png" alt="c"></p>
+<ul>
+<li><p>npm install <a target="_blank" rel="noopener" href="https://github.com/CodeFalling/hexo-asset-image">https://github.com/CodeFalling/hexo-asset-image</a></p>
+</li>
+<li><p>将图片放到同名的文件夹中 （注意图片的路径格式    &#x2F;分隔   ）</p>
+</li>
+</ul>
+<p><img src="/2022/08/12/blogConfig/d.png" alt="d"></p>
+<p><img src="/2022/08/12/blogConfig/e.png" alt="e"></p>
+<p><img src="/2022/08/12/blogConfig/f.png" alt="f"></p>
+
       
 
       
@@ -251,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/12/Spring/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/12/blogConfig/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,15 +315,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/08/12/blogConfig/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          blog配置
-        
-      </div>
-    </a>
   
+    <a href="/2022/08/12/Spring/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
