@@ -18,8 +18,11 @@
 <meta property="og:image" content="http://example.com/2022/08/12/Spring/a.png">
 <meta property="og:image" content="http://example.com/2022/08/12/Spring/b.png">
 <meta property="og:image" content="http://example.com/2022/08/12/Spring/c.png">
+<meta property="og:image" content="http://example.com/2022/08/12/Spring/d.png">
+<meta property="og:image" content="http://example.com/2022/08/12/Spring/e.png">
+<meta property="og:image" content="http://example.com/2022/08/12/Spring/f.png">
 <meta property="article:published_time" content="2022-08-12T07:00:29.000Z">
-<meta property="article:modified_time" content="2022-08-13T15:09:50.670Z">
+<meta property="article:modified_time" content="2022-08-14T08:43:56.327Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/08/12/Spring/a.png">
@@ -274,13 +277,88 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">十、xml自动装配</span><br><span class="line">(1)根据属性名称自动注入</span><br><span class="line"></span><br><span class="line">&lt;!--  注入值bean的id值和类属性名称一样--&gt;</span><br><span class="line">&lt;bean id=&quot;emp&quot; class=&quot;study.chw.autowire.Emp&quot; autowire=&quot;byName&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;bean id=&quot;dept&quot; class=&quot;study.chw.autowire.Dept&quot;&gt;&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(2)根据属性类型自动注入</span><br><span class="line">&lt;!--    根据属性的类型自动去寻找对应的类型 ，但是这个类型不能有多个 --&gt;</span><br><span class="line">&lt;bean id=&quot;emp&quot; class=&quot;study.chw.autowire.Emp&quot; autowire=&quot;byType&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;bean id=&quot;dept&quot; class=&quot;study.chw.autowire.Dept&quot;&gt;&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
 
-
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">十一、外部属性文件(导第三方jar包)</span><br><span class="line">prop.driverClass=com.mysql.jdbc.Driver</span><br><span class="line">prop.url=jdbc:mysql://localhost:3306/userDb</span><br><span class="line">prop.userName=root</span><br><span class="line">prop.password=root</span><br><span class="line">-----------------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--    导入外部属性文件--&gt;</span><br><span class="line">&lt;context:property-placeholder location=&quot;classpath:study/chw/propertys/jdbc.properties&quot;&gt;&lt;/context:property-placeholder&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--    配置连接池--&gt;</span><br><span class="line">&lt;bean id=&quot;dataSource&quot; class=&quot;com.alibaba.druid.pool.DruidDataSource&quot;&gt;</span><br><span class="line">      &lt;property name=&quot;driverClassName&quot; value=&quot;$&#123;prop.driverClass&#125;&quot;&gt;&lt;/property&gt;</span><br><span class="line">      &lt;property name=&quot;url&quot; value=&quot;$&#123;prop.url&#125;&quot;&gt;&lt;/property&gt;</span><br><span class="line">      &lt;property name=&quot;username&quot; value=&quot;$&#123;prop.userName&#125;&quot;&gt;&lt;/property&gt;</span><br><span class="line">      &lt;property name=&quot;password&quot; value=&quot;$&#123;prop.password&#125;&quot;&gt;&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
 
 
 <p>4.基于注解方式实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">一、基于注解方式创建对象</span><br><span class="line">@Component</span><br><span class="line">@Service</span><br><span class="line">@Controller</span><br><span class="line">@Repository</span><br><span class="line">(1)引入依赖</span><br><span class="line"></span><br><span class="line">(2)开启组件扫描</span><br><span class="line">&lt;!--    开启组件扫描，扫描study.chw.spring.anno1包下的所有类--&gt;</span><br><span class="line">&lt;context:component-scan base-package=&quot;study.chw.spring.anno1&quot;&gt;&lt;/context:component-scan&gt;</span><br><span class="line"></span><br><span class="line">(3)创建类，在类上面添加创建对象的注解 </span><br><span class="line">@Component(&quot;stu&quot;)     //这个value和xml配置里的id值作用一样</span><br><span class="line">public class Student &#123;</span><br><span class="line">    public void show()&#123;</span><br><span class="line">        System.out.println(&quot;student show...&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void test()&#123;</span><br><span class="line">        ApplicationContext context =</span><br><span class="line">                new ClassPathXmlApplicationContext(&quot;study/chw/spring/anno1/bean1.xml&quot;);</span><br><span class="line">        Student stu = context.getBean(&quot;stu&quot;, Student.class);</span><br><span class="line">        stu.show();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">二、开启组件扫描配置的细节</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">三、基于注解方式实现属性注入（在属性上面添加注解）</span><br><span class="line">(1)@Autowired:根据属性类型进行自动装配</span><br><span class="line">@Autowired</span><br><span class="line">private UserDao userDao;</span><br><span class="line"></span><br><span class="line">(2)@Qualifier:根据属性名称进行注入</span><br><span class="line">通常跟@Autowired一起使用</span><br><span class="line">@Autowired</span><br><span class="line">@Qualifier(&quot;userDaoImpl&quot;)</span><br><span class="line">private UserDao userDao;</span><br><span class="line"></span><br><span class="line">(3)@Resource:可以根据类型注入，可以根据名称注入</span><br><span class="line">@Resource</span><br><span class="line">private UserDao userDao;</span><br><span class="line"></span><br><span class="line">(4)@Value:注入普通类型属性</span><br><span class="line">@Value(value = &quot;abc&quot;)</span><br><span class="line">private String name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">四、完全注解开发</span><br><span class="line">(1)创建配置类，代替配置文件</span><br><span class="line">@Configuration //作为配置类，代替配置文件</span><br><span class="line">@ComponentScan(basePackages = &#123;&quot;study.chw.spring.config&quot;&#125;)</span><br><span class="line">public class SpringConfig &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(2)编写测试类</span><br><span class="line">@Test</span><br><span class="line">public void test()&#123;</span><br><span class="line">        ApplicationContext context =</span><br><span class="line">                new AnnotationConfigApplicationContext(SpringConfig.class);</span><br><span class="line">        UserService userService = context.getBean(&quot;userService&quot;, UserService.class);</span><br><span class="line">        System.out.println(userService);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="六、AOP"><a href="#六、AOP" class="headerlink" title="六、AOP"></a>六、AOP</h1><p>1.AOP基本概念</p>
+<p>不修改源代码，在主干中添加新功能</p>
+<p><img src="/2022/08/12/Spring/d.png" alt="d"></p>
+<p>2.AOP底层原理（使用动态代理）</p>
+<p>(1)有接口情况，使用JDK动态代理（创建接口实现类代理对象，增强类的方法）</p>
+<p><img src="/2022/08/12/Spring/e.png" alt="e"></p>
+<p>(2)没有接口情况，使用CGLIB动态代理（创建字类的代理对象，增强类的方法）</p>
+<p><img src="/2022/08/12/Spring/f.png" alt="f"></p>
+<p>3.JDK动态代理实现</p>
+<p>(1)使用JDK动态代理，使用Proxy类里面的方法创建代理对象</p>
+<p>(2)调用newProxyInstance方法</p>
+<p>​	方法有三个参数</p>
+<p>​	第一个参数：类加载器</p>
+<p>​	第二个参数：增强方法所在的类，这个类实现的接口，支持多个接口</p>
+<p>​	第三个参数：实现这个接口InvocationHandler，创建代理对象，写增强的部分</p>
+<p>4.AOP操作术语</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(1)连接点</span><br><span class="line">类里面哪些方法可以被增强，这些方法称为连接点</span><br><span class="line"></span><br><span class="line">(2)切入点</span><br><span class="line">实际被真正增强的方法，称为切入点</span><br><span class="line"></span><br><span class="line">(3)通知（增强）</span><br><span class="line">实际增强的逻辑部分称为通知（增强）</span><br><span class="line">通知有多种类型：前置通知、后置通知、环绕通知、异常通知、最终通知</span><br><span class="line"></span><br><span class="line">(4)切面</span><br><span class="line">把通知应用到切入点的过程</span><br></pre></td></tr></table></figure>
+
+
+
+<p>5.AOP操作 (准备)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.Spring框架一般基于AspectJ实现AOP操作</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
 
